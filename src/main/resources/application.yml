@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.19.138:3306/sell?characterEncoding=utf-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    #   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  redis:
+    host: 192.168.19.138
+    port: 6379
+    #chema:
+     #- classpath:sql/department.sql
+      # classpath:sql/employee.sql
+wechat:
+  mpAppId: wx8d68a2d83a788890
+  mpAppSecret: 45ab2f1a283df5fdbc49bf99e4eb164d
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: 06C56A89949D617xxxxxxxxxxx
+  keyPath: C:\Users\Administrator\Desktop\sell\h5.p12
+  notifyUrl: http://g6hsuj.natappfree.cc
+  templateId:
+    orderStatus: q_UgFIFa0lm1cyB-rTW1FID4a6FMoZWK_cobWvTCIso
+
+projectUrl:
+  wechatMpAuthorize: http://g6hsuj.natappfree.cc/sell
+  wechatOpenAuthorize: http://g6hsuj.natappfree.cc/sell
+  sell: http://g6hsuj.natappfree.cc/sell
